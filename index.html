@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlashAis - AI Flashcards Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <img src="https://h5p.org/sites/default/files/icons/flashcards-icon.png" alt="FlashAis Logo" id="logo">
+        <nav>
+            <ul>
+                <li><a href="#input">Input Notes</a></li>
+                <li><a href="#flashcards">View Flashcards</a></li>
+                <li><a href="#learn">Learn</a></li>
+                <li><a href="#quiz">Quiz</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Section 1: Input Notes -->
+        <section id="input">
+            <h2>Input Your Notes</h2>
+            <div class="input-container">
+                <textarea id="notes-input" placeholder="Paste your notes here..."></textarea>
+                <div class="input-actions">
+                    <label for="file-input" class="icon-button">
+                        <i class="fas fa-camera"></i> Upload
+                    </label>
+                    <input type="file" id="file-input" style="display:none;">
+                    <button onclick="startLoading()">Upload</button>
+                </div>
+                <div id="loading-facts">
+                    <!-- Loading facts will be displayed here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: View Flashcards -->
+        <section id="flashcards">
+            <h2>Generated Flashcards</h2>
+            <div id="flashcard-container">
+                <!-- Flashcards will be displayed here -->
+            </div>
+        </section>
+
+        <!-- Section 3: Learn Mode -->
+        <section id="learn">
+            <h2>Learn Mode</h2>
+            <button onclick="generateMatchingActivity()">Generate Matching Activity</button>
+            <div id="matching-container">
+                <!-- Matching activity will be displayed here -->
+            </div>
+        </section>
+
+        <!-- Section 4: Quiz Mode -->
+        <section id="quiz">
+            <h2>Quiz Mode</h2>
+            <button onclick="generateQuiz()">Generate Quiz</button>
+            <div id="quiz-container">
+                <!-- Quiz questions will be displayed here -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 FlashAis. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
